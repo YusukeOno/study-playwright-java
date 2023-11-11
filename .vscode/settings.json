@@ -11,4 +11,5 @@
         "editor.tabSize": 2,
         "editor.detectIndentation": false
     },
+    "java.configuration.updateBuildConfiguration": "interactive",
 }
