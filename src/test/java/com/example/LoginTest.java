@@ -2,19 +2,21 @@ package com.example;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.example.page.LoginPage;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class LoginTest extends TestBase {
 
   @Test
-  void testプレミアム会員でログインする() {
+  @DisplayName("testプレミアム会員でログインする")
+  void testLogin() {
     // Given
-    page.navigate("https://hotel.testplanisphere.dev/ja/login.html");
-    page.getByLabel("メールアドレス").fill("ichiro@example.com");
-    page.getByLabel("パスワード").fill("password");
+    LoginPage loginPage = new LoginPage(page);
+    loginPage.navigate();
 
     // When
-    page.locator("#login-button").click();
+    loginPage.doLogin("ichiro@example.com", "password");
 
     // Then
     assertTrue(page.url().contains("https://hotel.testplanisphere.dev/ja/mypage.html"));
