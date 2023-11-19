@@ -23,6 +23,5 @@ class LoginTest extends TestBase {
     // Then
     assertThat(page.getByRole(AriaRole.HEADING,
         new Page.GetByRoleOptions().setName("マイページ"))).hasText("マイページ");
-    ;
   }
 }
