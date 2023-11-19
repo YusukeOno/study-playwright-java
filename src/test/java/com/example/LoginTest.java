@@ -1,8 +1,10 @@
 package com.example;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 import com.example.page.LoginPage;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.AriaRole;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -19,6 +21,8 @@ class LoginTest extends TestBase {
     loginPage.doLogin("ichiro@example.com", "password");
 
     // Then
-    assertTrue(page.url().contains("https://hotel.testplanisphere.dev/ja/mypage.html"));
+    assertThat(page.getByRole(AriaRole.HEADING,
+        new Page.GetByRoleOptions().setName("マイページ"))).hasText("マイページ");
+    ;
   }
 }
