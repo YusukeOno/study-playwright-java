@@ -21,12 +21,13 @@ public class LoginPage {
   /**
    * doLogin.
    *
-   * @param mailAddress メールアドレス
-   * @param password    パスワード
+   * @param email    メールアドレス
+   * @param password パスワード
    */
-  public void doLogin(String mailAddress, String password) {
-    page.getByLabel("メールアドレス").fill(mailAddress);
+  public void doLogin(String email, String password) {
+    page.getByLabel("メールアドレス").fill(email);
     page.getByLabel("パスワード").fill(password);
     page.locator("#login-button").click();
+    page.waitForURL("**/mypage.html");
   }
 }
