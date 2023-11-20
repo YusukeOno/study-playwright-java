@@ -21,4 +21,32 @@ public class MyPage {
   public String getEmail() {
     return page.locator("#email").innerText();
   }
+
+  public String getName() {
+    return page.locator("#username").innerText();
+  }
+
+  public String getRank() {
+    return page.locator("#rank").innerText();
+  }
+
+  public String getAddress() {
+    return page.locator("#address").innerText();
+  }
+
+  public String getTel() {
+    return page.locator("#tel").innerHTML();
+  }
+
+  public String getGender() {
+    return page.locator("#gender").innerHTML();
+  }
+
+  public String getBirthday() {
+    return page.locator("#birthday").innerText();
+  }
+
+  public String getNotification() {
+    return page.locator("#notification").innerText();
+  }
 }

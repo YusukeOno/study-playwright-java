@@ -26,6 +26,13 @@ public class MyPageTest extends TestBase {
     loginPage.doLogin("ichiro@example.com", "password");
 
     // Then
-    assertAll(() -> assertEquals("ichiro@example.com", myPage.getEmail()));
+    assertAll(() -> assertEquals("ichiro@example.com", myPage.getEmail()),
+        () -> assertEquals("山田一郎", myPage.getName()),
+        () -> assertEquals("プレミアム会員", myPage.getRank()),
+        () -> assertEquals("東京都豊島区池袋", myPage.getAddress()),
+        () -> assertEquals("01234567891", myPage.getTel()),
+        () -> assertEquals("男性", myPage.getGender()),
+        () -> assertEquals("未登録", myPage.getBirthday()),
+        () -> assertEquals("受け取る", myPage.getNotification()));
   }
 }
