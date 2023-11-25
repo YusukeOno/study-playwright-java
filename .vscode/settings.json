@@ -1,5 +1,5 @@
 {
-    "java.checkstyle.version": "10.12.2",
+    "java.checkstyle.version": "9.3",
     "java.checkstyle.configuration": "${workspaceFolder}/google_checks.xml",
     "java.compile.nullAnalysis.mode": "automatic",
     "editor.formatOnSave": true,
