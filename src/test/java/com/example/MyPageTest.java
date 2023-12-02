@@ -5,13 +5,30 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.example.page.LoginPage;
 import com.example.page.MyPage;
+import com.example.util.CustomEvidence;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
 
 /**
  * MyPageTest.
  */
 public class MyPageTest extends TestBase {
+
+  /** CustomEvidence. */
+  private CustomEvidence evidence;
+
+  @BeforeEach
+  void setup(final TestInfo testInfo) {
+    evidence = new CustomEvidence(super.page, super.context, testInfo);
+  }
+
+  @AfterEach
+  void teardown(final TestInfo testInfo) {
+    evidence.takeScreenshot();
+  }
 
   /**
    * testMyPageExistUserOne.
