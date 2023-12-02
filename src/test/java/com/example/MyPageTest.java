@@ -13,9 +13,12 @@ import org.junit.jupiter.api.Test;
  */
 public class MyPageTest extends TestBase {
 
+  /**
+   * testMyPageExistUserOne.
+   */
   @Test
   @DisplayName("定義済みユーザの情報が表示されること_ichiro")
-  void testMyPageExistUserOne() {
+  final void testMyPageExistUserOne() {
 
     // Given
     LoginPage loginPage = new LoginPage(page);

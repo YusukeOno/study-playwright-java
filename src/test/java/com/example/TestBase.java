@@ -10,34 +10,55 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-class TestBase {
+/**
+ * TestBase.
+ */
+public class TestBase {
 
+  /** Playwright. */
   static Playwright playwright;
+
+  /** Browser. */
   static Browser browser;
 
-  BrowserContext context;
-  Page page;
+  /** BrowserContext. */
+  protected BrowserContext context;
 
+  /** Page. */
+  protected Page page;
+
+  /**
+   * launchBrowser.
+   */
   @BeforeAll
   static void launchBrowser() {
     playwright = Playwright.create();
-    browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+    browser = playwright.chromium().launch(
+        new BrowserType.LaunchOptions().setHeadless(false));
   }
 
+  /**
+   * closeBrowser.
+   */
   @AfterAll
   static void closeBrowser() {
     playwright.close();
   }
 
+  /**
+   * createContextAndPage.
+   */
   @BeforeEach
   void createContextAndPage() {
     context = browser.newContext();
     page = context.newPage();
   }
 
+  /**
+   * closeContext.
+   */
   @AfterEach
   void closeContext() {
     context.close();
   }
-
 }

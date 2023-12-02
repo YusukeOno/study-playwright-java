@@ -6,7 +6,7 @@ import com.microsoft.playwright.Page;
  * LoginPage.
  *
  */
-public class LoginPage {
+public final class LoginPage {
 
   private final Page page;
 
@@ -24,7 +24,7 @@ public class LoginPage {
    * @param email    メールアドレス
    * @param password パスワード
    */
-  public void doLogin(String email, String password) {
+  public void doLogin(final String email, final String password) {
     page.getByLabel("メールアドレス").fill(email);
     page.getByLabel("パスワード").fill(password);
     page.locator("#login-button").click();
