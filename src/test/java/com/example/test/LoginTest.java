@@ -1,7 +1,8 @@
-package com.example;
+package com.example.test;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
+import com.example.TestBase;
 import com.example.page.LoginPage;
 import com.example.util.CustomEvidence;
 import com.microsoft.playwright.Page;

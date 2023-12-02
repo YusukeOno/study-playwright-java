@@ -1,8 +1,9 @@
-package com.example;
+package com.example.test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.example.TestBase;
 import com.example.page.LoginPage;
 import com.example.page.MyPage;
 import com.example.util.CustomEvidence;
